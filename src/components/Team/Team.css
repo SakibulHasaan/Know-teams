@@ -1,0 +1,12 @@
+.team{
+
+    text-align:center;
+    align-items: center;
+    border: 2px solid purple;
+    margin: 10px 10px;
+    padding:10px;
+}
+
+.team img{
+    height: 100px;
+}

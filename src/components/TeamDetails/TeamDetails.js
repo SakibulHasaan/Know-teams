@@ -4,7 +4,9 @@ import './TeamDetails.css'
 import facebook from '../../images/Facebook.png'
 import youtube from '../../images/YouTube.png'
 import twitter from '../../images/Twitter.png'
-import { Link } from 'react-router-dom';
+import female from '../../images/female.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVenusMars, faFutbol, faFlag, faGlobe} from '@fortawesome/free-solid-svg-icons'
 
 
 const TeamDetails = () => {
@@ -21,6 +23,18 @@ const TeamDetails = () => {
 
     const {strTeam,strDescriptionEN,strTeamBadge,strGender,strCountry,intFormedYear,strTeamFanart3} = team;
 
+    let teamImage = "";
+    if(strGender === 'male'){
+       teamImage = <img src={strTeamFanart3} alt="" className="img-fluid" />;
+    }
+    
+    
+    else if(strGender === 'female'){
+       teamImage = <img src={female} alt="" className="img-fluid" />;
+    }
+
+    
+
     return (
         <>
             <div className="top-image">
@@ -30,16 +44,18 @@ const TeamDetails = () => {
             <div className="container">
                 <div className="card mt-3 ">
                     <div className="row team-card">
-                        <div className="col-md-8 col-sm-12">
+                        <div className="col-md-8 col-sm-10">
                             <h3>{strTeam}</h3>
-                            <p>Founded: {intFormedYear}</p>
-                            <p>Country: {strCountry}</p>
-                            <p>Sport Type: Football</p>
-                            <p>Gender: {strGender}</p>
+                            <p><FontAwesomeIcon icon={faGlobe} /> Founded: {intFormedYear}</p>
+                            <p><FontAwesomeIcon icon={faFlag} /> Country: {strCountry}</p>
+                            <p><FontAwesomeIcon icon={faFutbol} /> Sport Type: Football</p>
+                            <p><FontAwesomeIcon icon={faVenusMars} /> Gender: {strGender}</p>
                         </div>
 
                         <div className="col-md-4 col-sm-12">
-                            <img src={strTeamFanart3} alt="" className="img-fluid" />
+                                {
+                                    strGender === 'Male' ? <img src={strTeamFanart3} alt="" className="img-fluid" /> : <img src={female} alt="" className="img-fluid" />
+                                }
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-# Welcome to my Repository know Your Team
+# Welcome to my Repository of "Know Your Team" project
 
 Here I have added some team information from Premier League Tournament.
 You will see team names, their logo, founded date on the details place
